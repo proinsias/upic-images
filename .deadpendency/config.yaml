@@ -1,0 +1,10 @@
+---
+
+additional-dependency-files:
+  - type: bundler-gemfile
+    path: Gemfile
+
+ignore-failures:
+
+  ruby:
+    - bundle-audit
