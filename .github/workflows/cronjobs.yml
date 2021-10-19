@@ -19,12 +19,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: misspell
-        uses: reviewdog/action-misspell@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          locale: "US"
-
       - uses: browniebroke/pre-commit-autoupdate-action@v1.0.0
 
       - uses: peter-evans/create-pull-request@v3
