@@ -42,7 +42,7 @@ GEM
       chef-utils
     progress (3.6.0)
     rexml (3.3.9)
-    thor (1.1.0)
+    thor (1.4.0)
     tomlrb (2.0.1)
 
 PLATFORMS
