@@ -34,7 +34,7 @@ repos:
       rev: v3.0.0-alpha.2
       hooks:
           - id: prettier
-            stages: [commit]
+            stages: [pre-commit]
 
     # Git
 
@@ -128,4 +128,4 @@ repos:
             args:
                 - --ignore-unfixed
                 - . # last arg indicates the path/file to scan
-            stages: [push]
+            stages: [pre-push]
