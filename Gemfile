@@ -6,4 +6,4 @@ gem 'bundle-audit'
 gem 'bundler' # http://bundler.io/
 gem 'image_optim'
 gem 'image_optim_pack'
-gem 'mdl'
+
