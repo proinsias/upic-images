@@ -1,7 +1,0 @@
-{
-  "ignorePaths": ["**/.git/**", "[a-z]*/**", ".*", "Gemfile"],
-  "language": "en",
-  "noConfigSearch": true,
-  "words": ["dotfiles"],
-  "version": "0.2"
-}
