@@ -1,2 +1,3 @@
 .pre-commit-trivy-cache
 .pre-commit-trivv-cache
+.lycheecache
