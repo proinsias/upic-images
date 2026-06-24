@@ -1,0 +1,54 @@
+---
+pull_request_rules:
+  - name: Automatic merge for Dependabot updates
+    description:
+      Auto-merge Dependabot PRs once they are conflict-free and not in draft
+    conditions:
+      - author = dependabot[bot]
+      - base = main
+      - -draft
+      - -conflict
+    actions:
+      label:
+        add:
+          - dependencies
+      merge:
+        method: merge
+
+  - name: Request review for non-bot PRs
+    description:
+      Ask the codeowner to review any PR not opened by an automation bot
+    conditions:
+      - author != dependabot[bot]
+      - author != proinsias
+      - base = main
+      - -draft
+      - -closed
+      - "#approved-reviews-by = 0"
+    actions:
+      request_reviews:
+        users:
+          - proinsias
+
+  - name: Dismiss stale reviews when new commits are pushed
+    conditions:
+      - base = main
+      - -draft
+    actions:
+      dismiss_reviews:
+        approved: true
+        changes_requested: false
+        message: New commits were pushed; dismissing stale approvals.
+
+  - name: Auto-merge after approval
+    description:
+      Merge non-bot PRs once they have at least one approval and no conflicts
+    conditions:
+      - author != dependabot[bot]
+      - base = main
+      - -draft
+      - -conflict
+      - "#approved-reviews-by >= 1"
+    actions:
+      merge:
+        method: merge
